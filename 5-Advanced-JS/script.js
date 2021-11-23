@@ -88,6 +88,7 @@ console.log(age);
 console.log(obj.city);
 */
 
+/*
 // Passing Functions as arguments in a Function
 
 var years = [1990, 1965, 1937, 2005, 1998];
@@ -123,3 +124,42 @@ function maxHeartRate(el) {
 }
 var rates = arrayCalc(ages, maxHeartRate);
 console.log(rates);
+*/
+
+// IIFE
+
+// Normal Function 
+// function game() {
+//     var score = Math.random * 10;
+//     console.log(score >= 5);
+// }
+// game();
+
+// IIFE Function
+// (function () {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// })();
+
+// console.log(score);
+
+// (function (goodLuck) {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5 - goodLuck);
+// })(5);
+
+// Closures
+
+function retirement(retirementAge){
+    var a = ' years left until retirement.';
+    return function(yearOfBirth){
+        var age = 2021 - yearOfBirth;
+        console.log((retirementAge - age) + a);
+    }
+}
+
+var retirementUS = retirement(66);
+retirementUS(1990);
+
+retirement(66)(1990);
+
