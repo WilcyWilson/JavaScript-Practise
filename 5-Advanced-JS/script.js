@@ -149,7 +149,7 @@ console.log(rates);
 // })(5);
 
 // Closures
-
+/*
 function retirement(retirementAge){
     var a = ' years left until retirement.';
     return function(yearOfBirth){
@@ -159,7 +159,62 @@ function retirement(retirementAge){
 }
 
 var retirementUS = retirement(66);
-retirementUS(1990);
+var retirementGermany = retirement(65);
+var retirementIceland = retirement(67);
 
-retirement(66)(1990);
+retirementUS(1990);
+retirementGermany(1990)
+retirementIceland(1990);
+*/
+
+//retirement(66)(1990);
+
+// Returning Function inside Function
+/*
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function (name) {
+            console.log(name + ', can you please explain what UX design is?');
+        }
+    }
+    else if (job === 'teacher'){
+        return function (name){
+            console.log(name + ' What subject do you teach, ' + name + '?');
+        }
+    }
+    else{
+        return function (name) {
+            console.log('Hello ' + name + ', What do you do?');
+        }
+    }
+}
+
+var teacherQuestion = interviewQuestion('teacher');
+teacherQuestion('John');
+
+var designerQuestion = interviewQuestion('designer');
+designerQuestion('John');
+designerQuestion('jane');
+designerQuestion('Mike');
+
+interviewQuestion('teacher')('Max');
+interviewQuestion()('Max');
+*/
+
+// Using Closure
+/*
+function interviewQuestion(job) {
+    return function (name) {
+        if (job === 'designer')
+            console.log(name + ', can you please explain what UX design is?');
+        else if (job === 'teacher')
+            console.log(name + ' What subject do you teach, ' + name + '?');
+        else
+            console.log('Hello ' + name + ', What do you do?');
+    }
+}
+
+interviewQuestion('teacher')('Max');
+interviewQuestion('designer')('John');
+*/
 
