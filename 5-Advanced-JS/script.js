@@ -259,7 +259,7 @@ var emilyFormal = john.presentation.bind(emily,'formal');
 
 emilyFormal('afternoon');
 */
-
+/*
 var years = [1990, 1965, 1937, 2005, 1998];
 function arrayCalc(arr, fn) {
     var arrRes = [];
@@ -281,3 +281,4 @@ var ages = arrayCalc(years, calculateAge);
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 console.log(ages);
 console.log(fullJapan);
+*/
