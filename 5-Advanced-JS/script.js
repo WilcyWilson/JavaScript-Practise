@@ -322,6 +322,7 @@ console.log(fullJapan);
 */
 
 (function () {
+    var score = 0;
     var Question = function (question, answers, correct) {
         this.question = question;
         this.answers = answers;
@@ -338,6 +339,7 @@ console.log(fullJapan);
     Question.prototype.checkAnswer = function (answer) {
         if (answer === this.correct) {
             console.log("Correct Answer");
+            score++;
         } else {
             console.log("Incorrect Answer");
         }
@@ -360,6 +362,8 @@ console.log(fullJapan);
         }
     };
     nextQuestion();
+    console.log('Exiting......');
+    console.log('The score is:' + score);
 })();
 
 
