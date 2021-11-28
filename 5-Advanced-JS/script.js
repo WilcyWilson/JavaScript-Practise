@@ -282,3 +282,45 @@ var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 console.log(ages);
 console.log(fullJapan);
 */
+
+// Quiz Game
+
+(function () {
+    var Question = function (question, answers, correct) {
+        this.question = question;
+        this.answers = answers;
+        this.correct = correct;
+    };
+
+    Question.prototype.displayQuestion = function () {
+        console.log(this.question);
+        for (var i = 0; i < this.answers.length; i++) {
+            console.log(i + ":" + this.answers[i]);
+        }
+    };
+
+    Question.prototype.checkAnswer = function () {
+        var choice = parseInt(prompt("Enter your choice?"));
+        if (choice === this.correct) {
+            console.log("Correct Answer");
+        } else {
+            console.log("Incorrect Answer");
+        }
+    };
+
+    var question1 = new Question("What is the best Programming Language in the World?", ["Java", "JavaScript", "C#"], 1);
+    var question2 = new Question("Who is  the teacher of the course?", ["John", "Jemme", "Jonas"], 2);
+    var question3 = new Question("Do you like toothpaste?", ["Yes", "No"], 0);
+
+    var questions = [question1, question2, question3];
+
+    var n = Math.floor(Math.random() * questions.length);
+
+    questions[n].displayQuestion();
+    questions[n].checkAnswer();
+})();
+
+
+
+
+
